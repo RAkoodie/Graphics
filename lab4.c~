@@ -141,105 +141,6 @@ void draw() {
     // (Objects should lie in the cube with x, y, and z coordinates in the
     // range -5 to 5.)
 
-
-
-		void sphere(){
-			glPushMatrix();
-			glColor3f(0.2,0.2,0.6);
-			glutSolidSphere(1,32,32);
-			glPopMatrix();
-		}
-
-		void cylinder(){
-			glPushMatrix();
-			glColor3f(1,1,1);
-			glutSolidCylinder(0.3, 8, 32, 8);
-			glPopMatrix();			
-
-		}
-
-		void bar(){
-			glPushMatrix();
-			glTranslatef(-4,0,0);			
-			sphere();
-			glPopMatrix();
-
-			glPushMatrix();
-			glTranslatef(4,0,0);			
-			sphere();
-			glPopMatrix();
-
-			glPushMatrix();
-			glTranslatef(-4,0,0);
-			glRotatef(90, 0, 1, 0);			
-			cylinder();
-			glPopMatrix();
-		}
-
-		void square(){
-
-			glPushMatrix();
-			glTranslatef(0,4,0);
-			bar();	
-			glPopMatrix();		
-
-			glPushMatrix();
-			glTranslatef(-4,0,0);
-			glRotatef(90,0,0,-1);
-			bar();
-			glPopMatrix();
-
-			glPushMatrix();
-			glTranslatef(4,0,0);
-			glRotatef(90,0,0,-1);
-			bar();
-			glPopMatrix();
-
-			glPushMatrix();
-			glTranslatef(0,-4,0);
-			bar();
-			glPopMatrix();
-
-
-		}
-
-
-		void threeDsquare(){
-
-		square();		
-
-		glPushMatrix();
-		glTranslatef(0,0,-8);
-		square();
-		glPopMatrix();
-
-		glPushMatrix();
-		glTranslatef(-4,4,-4);
-		glRotatef(90,0,1,0);
-		bar();
-		glPopMatrix();
-
-		glPushMatrix();
-		glTranslatef(-4,-4,-4);
-		glRotatef(90,0,1,0);
-		bar();
-		glPopMatrix();
-
-		glPushMatrix();
-		glTranslatef(4,4,-4);
-		glRotatef(90,0,1,0);
-		bar();
-		glPopMatrix();
-
-		glPushMatrix();
-		glTranslatef(4,-4,-4);
-		glRotatef(90,0,1,0);
-		bar();
-		glPopMatrix();		
-			
-		}
-
-
 	if(objectNumber == 1){
 		glDisable(GL_LIGHTING);
 		glBegin(GL_TRIANGLE_FAN);
@@ -285,12 +186,109 @@ void draw() {
 
 		glutSolidCone(3, 5, 32, 8);
 	}else if(objectNumber == 4){
+		
+		void sphere(){
+			glPushMatrix();
+			glColor3f(0.2,0.2,0.6);
+			glutSolidSphere(1,32,32);
+			glPopMatrix();
+		}
+
+		void cylinder(){
+			glPushMatrix();
+			glColor3f(1,1,1);
+			glutSolidCylinder(0.3, 8, 32, 8);
+			glPopMatrix();			
+
+		}
+
+		void bar(){
+			glPushMatrix();
+			glTranslatef(-4,0,0);			
+			sphere();
+			glPopMatrix();
+
+			glPushMatrix();
+			glTranslatef(4,0,0);			
+			sphere();
+			glPopMatrix();
+
+			glPushMatrix();
+			glTranslatef(-4,0,0);
+			glRotatef(90, 0, 1, 0);			
+			cylinder();
+			glPopMatrix();
+		}
 		bar();
 	}else if(objectNumber == 5){
+
+		void square(){
+
+			glPushMatrix();
+			glTranslatef(0,4,0);
+			bar();	
+			glPopMatrix();		
+
+			glPushMatrix();
+			glTranslatef(-4,0,0);
+			glRotatef(90,0,0,-1);
+			bar();
+			glPopMatrix();
+
+			glPushMatrix();
+			glTranslatef(4,0,0);
+			glRotatef(90,0,0,-1);
+			bar();
+			glPopMatrix();
+
+			glPushMatrix();
+			glTranslatef(0,-4,0);
+			bar();
+			glPopMatrix();
+
+
+		}
+
 		square();
-	}else if(objectNumber == 6){
+	}/*else if(objectNumber == 6){
+
+
+		void threeDsquare(){
+
+		square();		
+
+		glPushMatrix();
+		glTranslatef(0,0,-8);
+		square();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(-4,4,-4);
+		glRotatef(90,0,1,0);
+		bar();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(-4,-4,-4);
+		glRotatef(90,0,1,0);
+		bar();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(4,4,-4);
+		glRotatef(90,0,1,0);
+		bar();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(4,-4,-4);
+		glRotatef(90,0,1,0);
+		bar();
+		glPopMatrix();		
+			
+		}
 		threeDsquare();
-	}
+	}*/
     
 }
 
